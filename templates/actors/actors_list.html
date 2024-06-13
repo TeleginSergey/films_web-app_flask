@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Actors</title>
+</head>
+<body>
+    <form action="/">
+        <button type="submit">Go to Main Page</button>
+    </form>
+
+    <h1>List of Actors</h1>
+
+    <ul>
+        {% for actor in actors %}
+            <li>
+                <a href="{{ url_for('actors_app.detail', actor_id=actor.id) }}">{{ actor.full_name }} {{ actor.age }} {{ actor.sex }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

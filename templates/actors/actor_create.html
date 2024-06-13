@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Actor</title>
+</head>
+<body>
+    <form action="/">
+        <button type="submit">Go to Main Page</button>
+    </form>
+
+    <form action="/actors/">
+        <button type="submit">Go to Actors List</button>
+    </form>
+
+    <h1>Add New Actor</h1>
+
+    <form action="" method="POST">
+        <label for="actor-full-name">Full Name:</label>
+        <input type="text" id="actor-full-name" name="actor-full-name" required><br><br>
+
+        <label for="actor-birth-date">Birth Date:</label>
+        <input type="date" id="actor-birth-date" name="actor-birth-date" required><br><br>
+
+        <label for="actor-sex">Sex:</label>
+        <select id="actor-sex" name="actor-sex" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br><br>
+
+        <label for="actor-country">Select Country:</label>
+        <input list="countries" id="actor-country" name="actor-country" required>
+        <datalist id="countries">
+            {% for country in countries %}
+                <option value="{{ country }}">{{ country }}</option>
+            {% endfor %}
+        </datalist><br><br>
+
+        <label for="actor-death">Death Date (Optional):</label>
+        <input type="date" id="actor-death" name="actor-death"><br><br>
+
+        <button type="submit">Add Actor</button>
+    </form>
+</body>
+</html>

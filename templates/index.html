@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+</head>
+<body>
+    <main>
+        <section>
+            <h2>About This Site</h2>
+            <p>This Movie Database allows you to manage information about actors and films. You can add, update, delete, and view details about actors and films.</p>
+        </section>
+
+        <section>
+            <h2>Features</h2>
+            <ul>
+                <li>
+                    <h3>Actors</h3>
+                    <p>Manage actor information including their name and age.</p>
+                    <ul>
+                        <li><a href="{{ url_for('actors_app.list') }}">View All Actors</a></li>
+                        <li><a href="{{ url_for('actors_app.add') }}">Add a New Actor</a></li>
+                    
+                    </ul>
+                </li>
+                <li>
+                    <h3>Films</h3>
+                    <p>Manage film information including the title, description, and year of release.</p>
+                    <ul>
+                        <li><a href="{{ url_for('films_app.list') }}">View All Films</a></li>
+                        <li><a href="{{ url_for('films_app.add') }}">Add a New Film</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+</body>
+</html>

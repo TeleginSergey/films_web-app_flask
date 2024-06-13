@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Film to Actor</title>
+</head>
+<body>
+    <form action="/">
+        <button type="submit">Go to Main Page</button>
+    </form>
+
+    <form action="/actors/">
+        <button type="submit">Go to Actors List</button>
+    </form>
+
+    <form action="/films/add/">
+        <button type="submit">Go to Create Film</button>
+    </form>
+    
+    <h1>Add Actor to Film</h1>
+
+    <form action="" method="POST">
+        <label for="actor-film">Select Film:</label>
+        <select id="actor-film" name="actor-film" required>
+            {% for film in films %}
+                <option value="{{ film.id }}">{{ film.title }} {{ film.year }} {{ film.rating }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <button type="submit">Add Film to Actor</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Films</title>
+</head>
+<body>
+    <form action="/">
+        <button type="submit">Go to Main Page</button>
+    </form>
+
+    <h1>List of Films</h1>
+
+    <ul>
+        {% for film in films %}
+            <li>
+                <a href="{{ url_for('films_app.detail', film_id=film.id) }}">{{ film.title }} {{ film.year }} {{ film.rating }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

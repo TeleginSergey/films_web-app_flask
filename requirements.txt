@@ -1,0 +1,9 @@
+Flask
+Flask-SQLAlchemy
+psycopg2-binary
+SQLAlchemy
+requests
+python-dotenv
+werkzeug
+Flask-Migrate
+psycopg

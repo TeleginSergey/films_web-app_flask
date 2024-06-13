@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Detail</title>
+</head>
+<body>
+    <form action="/">
+        <button type="submit">Go to Main Page</button>
+    </form>
+
+    <form action="/films/">
+        <button type="submit">Go to Films List</button>
+    </form>
+
+    <h1>Film Detail</h1>
+
+    <h2>{{ film.title }} ({{ film.year }})</h2>
+    <p><strong>Description:</strong> {{ film.description }}</p>
+    <p><strong>Our Rating:</strong> {{ film.rating }}</p>
+    <p><strong>IMBd Rating:</strong> {{ imbd_rating }}</p>
+    <p><strong>Country:</strong> {{ film.country }}</p>
+    <p><strong>Genre:</strong> {{ film.genre }}</p>
+    <p><strong>Status:</strong> {{ film.status }}</p>
+    <li><a href="{{ url_for('films_app.update', film_id=film.id) }}">Update Film</a></li>
+    <li><a href="{{ url_for('films_app.delete', film_id=film.id) }}">Delete Film</a></li>
+    <li><a href="{{ url_for('films_app.add_actor', film_id=film.id) }}">Add Actor to Film</a></li>
+
+    <h2>Actors</h2>
+    <ul>
+        {% for actor in actors %}
+            <li>{{ actor.full_name }} ({{ actor.age }}, {{ actor.sex }})
+                <form action="{{ url_for('films_app.delete_actor', film_id=film.id, actor_id=actor.id) }}" method="post">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
