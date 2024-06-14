@@ -40,6 +40,6 @@ jobs:
         pip install -r requirements.txt
         chmod +x testing/test.sh
     - name: Test actors
-      run: ./testing/test.sh testing/test_actors
+      run: ./testing/test.sh test_actors
     - name: Test films
-      run: ./testing/test.sh testing/test_films
+      run: ./testing/test.sh test_films
