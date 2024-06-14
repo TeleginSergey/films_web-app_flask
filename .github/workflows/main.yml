@@ -39,7 +39,5 @@ jobs:
         python3 -m pip install --upgrade pip
         pip install -r requirements.txt
         chmod +x testing/test.sh
-    - name: Test actors
-      run: ./testing/test.sh test_actors
-    - name: Test films
-      run: ./testing/test.sh test_films
+    - name: Testing
+      run: ./testing/test.sh testing
