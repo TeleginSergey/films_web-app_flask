@@ -1,8 +1,8 @@
-from datetime import date, datetime
-from uuid import UUID, uuid4
+from datetime import datetime
+from uuid import uuid4
 import pycountry
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import CheckConstraint, ForeignKey, UniqueConstraint
+from sqlalchemy import UniqueConstraint
 from sqlalchemy.orm import relationship
 from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 
